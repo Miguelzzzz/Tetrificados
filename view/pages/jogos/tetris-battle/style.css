@@ -1,0 +1,375 @@
+body {
+    background-image: url('fundos/neon.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 2em;
+    text-align: center;
+    zoom: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  #msgPc{
+    display: none;
+  }
+
+  img {
+    margin: 0 auto;
+  }
+
+  canvas.p1 {
+    border: 4px solid #e91515;
+    margin-top: 50px;
+    margin-bottom: 13px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+  }
+
+  canvas.p2 {
+    border: 4px solid #0d1cf3;
+    margin-top: 50px;
+    margin-bottom: 13px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+  }
+
+  #player1_section {
+    float: left;
+  }
+
+  @font-face {
+    font-family: comicsans;
+    src: url(./font/ComicSansMS3.ttf);
+  }
+
+  .btnIniciar {
+    display: flex;
+    margin: 0 auto;
+    color: #000000;
+    background-color: #72eb10;
+    margin-top: 2%;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    font-size: 50px;
+    border-radius: 15px;
+    font-family: comicsans;
+    box-shadow: #000000 -4px 4px 2px;
+    text-shadow: #fff 0px 0px 10px;
+    transition: transform 0.3s;
+    border: none;
+
+  }
+
+  .btnIniciar:hover {
+    background-color: #0d5300;
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  .titulo {
+    padding-top: 10px;
+    font-size: 100px;
+    font-family: comicsans;
+    transition: 300ms;
+    margin-bottom: -25px;
+  }
+
+  .all {
+    display: flex;
+    justify-content: center;
+  }
+
+  span {
+    text-shadow: #000000 -3px 3px 3px;
+  }
+
+  aside img {
+    position: absolute;
+    top: 19%;
+    left: 90;
+    width: 350px;
+    opacity: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: 300ms;
+  }
+
+  .canvas-block {
+    border: 2px solid #fff;
+    /* Espessura e cor da borda */
+  }
+
+  #score_p1 {
+    background-color: #e91515;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-radius: 5px;
+    font-family: comicsans;
+    text-shadow: #000000 -4px 2px 4px;
+    box-shadow: #000000 -1px 1px 4px;
+  }
+
+  #score_p2 {
+    background-color: #0d1cf3;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-radius: 5px;
+    font-family: comicsans;
+    text-shadow: #000000 -4px 2px 4px;
+    box-shadow: #000000 -1px 1px 4px;
+
+  }
+
+  .mudarfundo {
+    position: absolute;
+    top: 32%;
+    right: 90;
+    width: 350px;
+    font-family: comicsans;
+    font-size: 35px;
+    background-color: #fff;
+    border-radius: 10px;
+    opacity: 80%;
+    color: #000000;
+    transition: 300ms;
+
+  }
+
+  .baixoAside {
+    display: none;
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    width: 350px;
+    font-family: comicsans;
+    font-size: 30px;
+    color: #ffffff;
+    
+  }
+
+
+  #background-selector {
+    background-color: #000000;
+    font-family: comicsans;
+    color: #fff;
+    font-size: 30px;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 85%;
+    
+  }
+
+  select{
+    width: auto;
+    cursor: pointer;
+  }
+
+
+
+  #buttonOp{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1%;
+    margin-top: 3%;
+    margin-bottom: 13;
+    font-size: 25px;
+    font-family: comicsans;
+    border: 3px solid#000000;
+    transition: transform 0.2s;
+    max-width: 100%;
+    width: 85%;
+    transition: 300ms;
+  }
+
+
+  #music-selector {
+    background-color: #000000;
+    font-family: comicsans;
+    color: #fff;
+    font-size: 30px;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 85%;
+  }
+
+
+
+  #buttonOp:hover {
+    transform: scale(1.1);
+    background-color: #e0e0e0;
+  }
+
+  a {
+    color: white;
+
+  }
+  option{
+    width: auto;
+  }
+
+  #msgPc{
+    display: none;
+    justify-content: center;
+    color: white;
+    font-family: comicsans;
+    margin-top: 25%;
+    font-size: 45px;
+    -webkit-text-stroke: black 1px;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+    font-size: 23px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+
+  @media screen and (max-width:1373px){
+    body{
+      zoom: 0.85;
+    }
+
+    aside img {
+      position: absolute;
+      left: 70;
+      top: 19%;
+      width: 250px;
+      opacity: 80%;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    
+    .mudarfundo {
+      position: absolute;
+      top: 20%;
+      right: 70;
+      width: 250px;
+      font-family: comicsans;
+      font-size: 35px;
+      background-color: #fff;
+      border-radius: 10px;
+      opacity: 80%;
+      color: #000000;
+    }  
+
+    .btnIniciar {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 3px;
+      padding-bottom: 10px;
+      font-size: 40px;
+    }
+    .titulo {
+      margin: 5px;
+      padding-top: 10px;
+      font-size: 75px;
+      font-family: comicsans;
+      margin-bottom: -50px;
+      margin-top: -21px;
+    }
+
+    .baixoAside {
+      display: none;
+      position: absolute;
+      top: 100%;
+      text-align: center;
+      left: -18%;
+      font-family: comicsans;
+      font-size: 25px;
+      color: #ffffff;
+      
+    }
+  
+  }
+
+  @media screen and (max-width:1600px) {
+    body{
+      zoom: 0.90;
+    }
+  
+  }
+
+  @media screen and (max-width:1037px){
+    body{
+      zoom: 0.57;
+    }
+  }
+
+  @media screen and (max-height:818px) {
+    body{
+      zoom: 0.90;
+    }
+  }
+
+  @media screen and (max-height:746px) {
+    body{
+      zoom: 0.80;
+    }
+  }
+
+  @media screen and (max-height:668px) {
+    body{
+      zoom: 0.70;
+    }
+  }
+
+  @media screen and (max-height:600px) {
+    body{
+      zoom: 0.60;
+    }
+  }
+
+  /*Mensagem para celular*/
+
+  @media screen and (max-height:1081px) and (max-width:795px) {
+
+    aside img {
+      display: none;
+    }
+    
+    .mudarfundo {
+      display: none;
+    }  
+
+    .btnIniciar {
+      display: none;
+    }
+    .titulo {
+      display: none;
+    }
+
+    .baixoAside {
+      display: none;
+    }
+    canvas{
+      display: none;
+    }
+    #score_p1, #score_p2{
+      display: none;
+    }
+
+    #msgPc{
+      display: flex;
+      justify-content: center;
+      color: white;
+      font-family: comicsans;
+      margin-top: 25%;
+      font-size: 45px;
+      -webkit-text-stroke: black 1px;
+    }
+  }
+
+
+

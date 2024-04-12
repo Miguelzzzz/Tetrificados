@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="./util/style.css" />
+    <link rel="icon" type="image/x-icon" href="./build/icon.ico">
+    <title>tetris ⚡</title>
+    <link rel="stylesheet" href="../../../css/button-sair.css">
+</head>
+
+<body text="white">
+    <a href="../../../../index.html">
+        <button class="button-voltar">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 rotate">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+            </svg>
+            
+            <div class="text-voltar">
+            Voltar
+            </div>
+        </button>
+    </a>
+    <!-- HOME SCREEN -->
+    <div id="home" class="full-screen float with-bg">
+        
+        
+        <div class="logo">
+            <span class="red">K</span>
+            <span class="red">A</span>
+            <span class="red">T</span>
+            <span class="red">C</span>
+            <span class="red">H</span>
+            <span class="red">A</span>
+            <span class="red">U</span>
+            <span class="red">⚡</span>
+        </div>
+        <button id="startBtn">
+            Começar!
+        </button>
+    </div>
+
+    <!-- GAME OVER SCREEN -->
+    <div id="game-over" class="full-screen float hidden">
+        <h1>Katchuga! Você perdeu!</h1>
+        <h2>Pistões pontos: <span class="score"></span></h2>
+        <button id="playAgainBtn" class="active">Correr de novo</button>
+        <button id="quitBtn">Início</button>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="game" class="full-screen with-bg">
+        <div class="left side"></div>
+        <canvas id="tetris" width="400" height="760"></canvas>
+        <div class="right side">
+            <div class="square"><img src="" id="next-piece" /></div>
+            <p>Ponto: <span class="score"></span></p>
+            <p>Velocidade: <span id="speed"></span></p>
+        </div>
+    </div>
+
+    <script src="./util/piece.js"></script>
+    <script src="./util/skeletons.js"></script>
+    <script src="./util/functions.js"></script>
+    <script src="./util/game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+
+#score #speed {
+    display: inline-block;
+}
+
+div {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    
+}
+
+.botaojogador1 {
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 4px;
+    background: #fff;
+    /*CORES PARA COMPUTADORES ANTIGOS*/
+    background:white;
+    border-radius: 8px;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 35px;
+    padding: 15px 0px;
+    width: 400px;
+}
+
+
+.with-bg {
+    background-color: rgb(0, 0, 0);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+}
+.side {
+    width: 400px;
+}
+
+#tetris {
+    border: 4px outset #919191;
+    max-width: 400px !important;
+    max-height: 760px !important;
+}
+
+.float {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-screen {
+    width: 1280px;
+    height: 800px;
+    max-width: 1280px;
+    max-height: 800px;
+}
+
+#game-over {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home {
+    display: flex;
+    background-image: url(bg.jpg);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#quitBtn {
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+button {
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 4px;
+    background: #fff;
+    /*CORES PARA COMPUTADORES ANTIGOS*/
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    font-family: monospace;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-out;
+    font-size: 35px;
+    padding: 15px 0px;
+    width: 400px;
+}
+
+button.active {
+    background: #FFF !important;
+}
+
+button:hover {
+    background: #FFF;
+    cursor: pointer;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+input:checked + .slider {
+  background-color: #EC4398;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #EC4398;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#startBtn {
+    margin-top: 300px;
+}
+  table {
+      border-collapse: collapse;
+      display: grid;
+      grid-row: 80vh 20vh;
+      grid-column: 20vw 40vw 40vw;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .canvas {
+      border: 15px solid white;
+      background-color: rgb(236, 67, 152, 0.4);
+    }
+   
+   #game {
+      border: 10px solid #FFF;
+      border-radius: 20px;
+      background-color: rgb(236, 67, 152, 0.4);
+    }
+    #game1 {
+      margin-right: 3%;
+      border: 10px solid #FFF;
+      border-radius: 20px;
+      background-color: rgb(236, 67, 152, 0.4);
+    }
+
+ .bodyp1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: 100vw 100vh;
+      background-repeat: no-repeat;
+      margin: 0;
+      background-image: url('../images/fundo1.jpg'); /* Substitua pelo caminho da sua imagem */
+      width: 100vw;
+      height: 100vh;
+    }
+
+.buttons {
+  display: table;
+  height: 100%;
+  width: 50%;
+}
+
+.container {
+  padding-top: auto;
+  text-align: center;
+
+  position: relative;
+   display: block;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.btnfos {
+  color: #fff;
+  cursor: pointer;
+  display: black;
+  font-size: 90%;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 100%;
+  margin: 0 auto 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+  height: 10%;
+  border-radius: 50px
+}
+@media (min-width: 400px) {
+  .btnfos {
+    display: inline-block;
+    margin-right: 2.5em;
+  }
+  .btnfos:nth-of-type(even) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 600px) {
+  .btnfos:nth-of-type(even) {
+    margin-right: 2.5em;
+  }
+  .btnfos:nth-of-type(5) {
+    margin-right: 0;
+  }
+}
+
+.btnfos-2 {
+  background: white;
+  font-weight: 200px;
+  width: 80%;
+  height: 10%;
+  color: #EC4398;
+  font-size: 90%;
+  line-height: 200%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btns{
+  margin-left: 25px;
+}
+.btnfos-2 svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 120%;
+  border-radius: 50px;
+}
+.btnfos-2 rect {
+  fill: none;
+  stroke: white;
+  stroke-width: 1;
+  stroke-dasharray: 422, 0;
+}
+
+.container2p{
+  border: solid white 2px;
+  border-radius: 13px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnfos-2:hover {
+  background: #EC4398;
+
+  color: white;
+}
+.btnfos-2:hover rect {
+  stroke-width: 8;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+          transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.logo {
+  height: 30%;
+  margin-bottom: 20%;
+}
+#score1{
+      border: 8px solid white;
+      border-radius: 10px;
+      width: 80%;
+      background-color: rgb(236, 67, 152, 0.4);
+      color: white;
+      height: 10%;
+    }
+#score2{
+      border: 8px solid white;
+      border-radius: 10px;
+      width: 80%;
+      height: 10%;
+      background-color: rgb(236, 67, 152, 0.4);
+      color: white;
+    }    
+ 
+.linhaPontos .score1 .score2{
+  display: inline-block;
+}
+.tabela2p{
+  width: 100vw;
+}

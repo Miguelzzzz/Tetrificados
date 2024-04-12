@@ -1,0 +1,91 @@
+<html>
+
+<head>
+  <title>Battle Tetris</title>
+  <meta name="google" content="notranslate">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../../../css/button-sair.css">
+</head>
+<body>
+  <a href="../../../../index.html"><button class="button-voltar">
+
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 rotate">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+    </svg>
+  
+    
+    <div class="text-voltar">
+      Voltar
+    </div>
+  
+  </button></a>
+<h3>
+  <div class="titulo">
+    <span style="color: #FE4868; ">Ba</span>
+    <span style="color: #FD9815; margin-left: -35;">tt</span>
+    <span style="color: #4FCA39; margin-left: -38">le</span>
+    <span style="color: #00E4F6;"> Tet</span>
+    <span style="color: #D128CD; margin-left: -36;">ris</span>
+  </div>
+  <div class="all">
+    <div>
+      <canvas id="tetris_p2" class="p2" width="200" height="400"></canvas>
+      <div id="score_p2">0</div>
+    </div>
+    <div id="player1_section">
+      <canvas id="tetris_p1" class="p1" width="200" height="400"></canvas>
+      <div id="score_p1">0</div>
+    </div>
+  </div>
+  <aside id="controles">
+    <img src="./img/controles.png" alt="Imagem com os controles usado no jogo">
+  </aside>
+  <aside class="mudarfundo" id="trocarfundo">
+    Fundo<br>
+    <select id="background-selector">
+      <option value="fundos/ceu.gif">Céu</option>
+      <option value="fundos/neon.gif">Neon</option>
+      <option value="fundos/horadeaventura.gif">Hora de Aventura</option>
+      <option value="fundos/montanhas.gif">Montanhas</option>
+      <option value="fundos/gato.gif">Gato</option>
+      <option value="fundos/hollowknight.gif">Hollow Knight</option>
+      <option value="fundos/minecraft.gif">Minecraft</option>
+    </select><br>
+
+    Música<br>
+    <select id="music-selector">
+      <option value="musicas/theme.mp3">Tetris Padrão</option>
+      <option value="musicas/estrada.mp3">Estrada da vida</option>
+      <option value="musicas/loop.mp3">Loop Hero</option>
+      <option value="musicas/melhor.mp3">A Melhor</option>
+      <option value="musicas/otherside.mp3">Mine Otherside</option>
+      <option value="musicas/megalovania.mp3">Megalovania</option>
+      <option value="nenhuma">Nenhuma</option>
+    </select>
+<br>
+    <button id="buttonOp" onclick="changeAll()">Aplicar</button>
+<br>
+    <aside class="baixoAside">
+      Aplicado com sucesso!
+    </aside>
+  </aside>
+    <h1 id="msgPc">O jogo só é compatível para computadores!! </h1>
+
+  <audio src="./theme.mp3" hidden loop></audio>
+  <button class="btnIniciar">Começar!</button>
+<br>
+  <div><img class="som" src="./img/com_som.png" alt="" width="75px"></div>
+
+  <footer>Desenvolvido por <strong>
+      <a href="https://www.instagram.com/gustavogualda10/" target="_blank">
+        Gustavo Gualda</a>,
+      <a href="https://www.twitch.tv/jubileuuwuu" target="_blank">
+        João Paulo</a> e João Luiz</strong></footer>
+
+</body>
+<script src="script.js"></script>
+</html>

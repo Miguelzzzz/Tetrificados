@@ -1,0 +1,401 @@
+
+/* Css Index */
+
+#fundo{
+   background-image: url(imgs/img03.jpg);
+
+}
+
+.botao01{
+
+   margin-top: 10%;
+   margin-left: 12%;
+   margin-right: 22%;
+
+}
+
+.botao02{
+
+   margin-top: -253px;
+
+   /* Left: Esquerda */
+   margin-left: 43%;
+
+   /* right: Direita */
+   margin-right: 50%;
+   
+
+}
+
+.botao03{
+   margin-top: -17%;
+   margin-left: 70%;
+   margin-right: 10%;
+
+   
+
+}
+
+.img{
+
+width: 250px;
+height: 250px;
+
+
+}
+
+
+.img2{
+   margin-top: 9;
+
+   width: 290px;
+   height: 290px;
+   
+   
+   }
+
+
+.txt{
+
+color: #D91122;
+font-size: 50px;
+font-family: SuperMario256;
+text-shadow: 2px 4px 10px #000000, 0 0 10px #21318C; 
+font-weight: bold;
+margin-top: 10%;
+margin-bottom: 2%;
+margin-left: 30%;
+margin-right: 2%;
+
+
+}
+
+@font-face{
+
+font-family: SuperMario256 ;
+src: url(./fonte/SuperMario256.ttf);
+
+}
+
+/* ------- */
+
+
+/* Css tetrisF */
+
+#teste{
+
+   background-image: url(imgs/img03.jpg);
+
+   background-size: cover;
+
+  
+}
+
+
+/* .btnVoltarF{
+
+background-color: white;
+
+height: 80px;
+width: 210px;
+
+border-radius: 20px;
+
+margin-top: -8%;
+margin-left: 77%;
+margin-right: 10%;
+
+
+color: yellow;
+   font-size: 40px;
+
+
+  
+   font-family: SuperMario256;
+   
+   }
+   
+   @font-face{
+   
+      font-family: SuperMario256 ;
+      src: url(./fonte/SuperMario256.ttf);
+      
+      }
+
+
+
+
+
+.text{
+
+   text-align: center;
+   text-decoration: none;
+   margin-left: 5.5%;
+   margin-top: 1%;
+} */
+
+.btn{
+
+
+   margin-top: -8%;
+   margin-left: 77%;
+   margin-right: 10%;
+
+
+}
+
+.btnF{
+
+   height: 80px;
+   width: 210px;
+   
+   border-radius: 20px;
+
+
+}
+
+.text{
+
+
+color: #023FFF;
+   font-size: 35px;
+   text-decoration: none;
+
+
+  
+   font-family: SuperMario256;
+   
+   }
+   
+   @font-face{
+   
+      font-family: SuperMario256 ;
+      src: url(./fonte/SuperMario256.ttf);
+      
+      }
+
+.fundoPlayer{
+
+background-color: #023FFF;
+
+
+width: 270px;
+height: 400px;
+
+margin-top: 12%;
+margin-left: 75%;
+
+
+border-radius: 50px;
+
+
+
+}
+
+.imgBox{
+
+opacity: 1.0;
+margin-top: 15%;
+margin-left: 14%;
+margin-right: 10%;
+
+width: 200px;
+height: 200px;
+
+
+}
+
+
+/* ------- */
+
+/* Css tetrisM */
+
+
+#fundoM{
+
+background-image: url(imgs/Novo\ Projeto.jpg);
+background-size: cover;
+
+}
+
+
+/* .btnVoltarM{
+
+   background-color: black;
+   
+   height: 70px;
+   width: 210px;
+   
+   border-radius: 20px;
+   
+   margin-top: -8%;
+   margin-left: 77%;
+   margin-right: 10%;
+   
+   text-align: center;
+   
+   }
+   
+   .voltartxtM{
+   
+      margin-top: -60% ;
+      color: black;
+      font-size: 30px;
+      text-align: center;
+      font-family: SuperMario256;
+      
+      }
+      
+      @font-face{
+      
+         font-family: SuperMario256 ;
+         src: url(./fonte/SuperMario256.ttf);
+         
+         } */
+
+
+
+         .btnM{
+
+            height: 80px;
+            width: 210px;
+            
+            border-radius: 20px;
+         
+         
+         }
+         
+         .textM{
+         
+         
+            color: black;
+            font-size: 30px;
+            text-align: center;
+            font-family: SuperMario256;
+            text-decoration: none;
+            
+            }
+            
+            @font-face{
+            
+               font-family: SuperMario256 ;
+               src: url(./fonte/SuperMario256.ttf);
+               
+               } 
+         
+   
+   
+   
+   .fundoPlayerM{
+   
+   background-color: #005810;
+   
+   
+   width: 270px;
+   height: 400px;
+   
+   margin-top: 12%;
+   margin-left: 75%;
+   
+   
+   border-radius: 50px;
+   
+   
+   
+   }
+   
+   .imgBoxM{
+   
+   opacity: 1.0;
+   margin-top: 15%;
+   margin-left: 14%;
+   margin-right: 10%;
+   
+   width: 200px;
+   height: 200px;
+   
+   
+   }
+
+/* ------- */
+
+/* Css tetrisD */
+
+#fundoTd{
+
+background-image: url(imgs/img0.png);
+background-size: cover;
+
+opacity: 0.8;
+
+}
+
+.btnVoltarD{
+
+   background-color: #3F3C4F;
+   
+   height: 70px;
+   width: 210px;
+   
+   border-radius: 20px;
+   
+   margin-top: -8%;
+   margin-left: 77%;
+   margin-right: 10%;
+   
+   text-align: center;
+   
+   }
+   
+   .voltarD{
+   
+      margin-top: -60% ;
+      margin-bottom: 10%;
+      color: yellow;
+      font-size: 30px;
+      text-align: center;
+      font-family: SuperMario256;
+      
+      }
+      
+      @font-face{
+      
+         font-family: SuperMario256 ;
+         src: url(./fonte/SuperMario256.ttf);
+         
+         }
+   
+   
+   
+   .fundoPlayerD{
+   
+   background-color: white;
+   
+   
+   width: 270px;
+   height: 400px;
+   
+   margin-top: 12%;
+   margin-left: 75%;
+   
+   
+   border-radius: 50px;
+   
+   
+   
+   }
+   
+   .imgBoxD{
+   
+   opacity: 1.0;
+   margin-top: 15%;
+   margin-left: 14%;
+   margin-right: 10%;
+   
+   width: 200px;
+   height: 200px;
+   
+   
+   }
+
+/* ------- */

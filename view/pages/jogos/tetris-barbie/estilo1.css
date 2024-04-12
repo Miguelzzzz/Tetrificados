@@ -1,0 +1,213 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+* {
+  -moz-box-sizing: inherit;
+       box-sizing: inherit;
+  -webkit-transition-property: all;
+          transition-property: all;
+  -webkit-transition-duration: .6s;
+          transition-duration: .6s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+*/
+
+html,
+body {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  
+}
+
+body {
+  background-image: url(images/fundo.png);
+  background-size: 100vw 100vh;
+  font-family: 'Moonjelly', sans-serif;
+  font-weight: 400;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Moonjelly', sans-serif;
+
+}
+
+.buttons {
+  
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center ;
+  height: 100%;
+  width: 95vw;
+  margin-top: 20vh;
+}
+
+.container2 {
+
+  
+  display: grid;
+  text-align: center;
+  vertical-align: middle;
+  width: 100vw;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 60% ;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  
+  
+}
+
+
+.btnfos {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 50%;
+  margin: 0 auto 2em;
+  position: relative;
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  
+}
+@media (min-width: 400px) {
+  .btnfos {
+    display: inline-block;
+    margin-right: 2.5em;
+  }
+  .btnfos:nth-of-type(even) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 600px) {
+  .btnfos:nth-of-type(even) {
+    margin-right: 2.5em;
+  }
+  .btnfos:nth-of-type(5) {
+    margin-right: 0;
+  }
+}
+.botoes{
+  width:  100vw;
+  display:flex ;
+  align-items: center;
+  margin: center;
+  margin-left: 15%;
+}
+
+.btnfos-1 {
+  background: rgb(220, 0, 155, 0.6);
+  font-weight: 100;
+  margin-top: 25%;
+  width: 90%;
+  height: 80%;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  overflow: hidden;
+  border-radius: 75px;
+}
+.btnfos-1 svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+ 
+}
+.btnfos-1 rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 0;
+  stroke-dasharray: 422, 0;
+ 
+}
+
+.btnfos-1:hover {
+  background: #EC4398;
+  letter-spacing: 1px;
+  font-weight: 900;
+  border-radius: 75px;
+}
+.btnfos-1:hover rect {
+  border-radius: 75px;
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+          transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btnfos-2 {
+  letter-spacing: 0;
+  height: 30vh;
+  color: #EC4398;
+  font-weight: 700;
+  border: #EC4398 15px;
+}
+
+.btnfos-2:hover,
+.btnfos-2:active {
+  letter-spacing: 5px;
+}
+
+.btnfos-2:after,
+.btnfos-2:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  -webkit-transition: all 280ms ease-in-out;
+          transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.btnfos-2:hover:after,
+.btnfos-2:hover:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-color: #fff;
+  -webkit-transition: width 350ms ease-in-out;
+          transition: width 350ms ease-in-out;
+  width: 70vw;
+}
+
+.btnfos-2:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70vw;
+}
+.logo {
+  height: 40%;
+  margin-bottom: 10%;
+}
+.btnSom {
+    margin-top: 25%;
+  width: 100%;
+  height: 100%;
+}
+.barbie1{
+  height: 40vh;
+
+}
+.barbie2{
+  height: 40vh;
+}
+.bloco {
+  height: 65vh;
+  
+}

@@ -1,0 +1,195 @@
+@font-face {
+   font-family: Acme;
+   src: url(images/moonjelly-light.woff);
+}
+* {
+  -moz-box-sizing: inherit;
+       box-sizing: inherit;
+  -webkit-transition-property: all;
+          transition-property: all;
+  -webkit-transition-duration: .6s;
+          transition-duration: .6s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+*/
+
+html,
+body {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+}
+
+.bodyp1 {
+  background-image: url(images/fundo.png);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+ letter-spacing: 1px;
+  font-weight: 400;
+  overflow: hidden;
+  font-family: Acme;
+}
+
+.buttons {
+  display: table;
+  height: 100%;
+  width: 90%;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+
+.btnfos {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 100%;
+  margin: 0 auto 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+  height: 40vh;
+  border-radius: 50px
+}
+@media (min-width: 400px) {
+  .btnfos {
+    display: inline-block;
+    margin-right: 2.5em;
+  }
+  .btnfos:nth-of-type(even) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 600px) {
+  .btnfos:nth-of-type(even) {
+    margin-right: 2.5em;
+  }
+  .btnfos:nth-of-type(5) {
+    margin-right: 0;
+  }
+}
+
+.btnfos-1 {
+  background: white;
+  font-weight: bold;
+  width: 80%;
+  height: 70vh;
+  color: #EC4398;
+  text-decoration: none;
+}
+.btnfos-1 svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80%;
+  height: 70vh;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.btnfos-1 rect {
+  fill: none;
+  stroke: #fff;
+  width: 80%;
+  height: 70vh;
+  stroke-width: 1;
+  stroke-dasharray: 422, 0;
+}
+
+.btnfos-1:hover {
+  background: #EC4398;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  color: white
+}
+.btnfos-1:hover rect {
+  stroke-width: 14;
+  stroke-height: 14;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+          transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.logo {
+  height: 30%;
+  margin-bottom: 20%;
+}
+.btnSom {
+  margin-top: 25%;
+  width: 100%;
+  height: 100%;
+}
+.barbie1{
+  overflow: hidden;
+  height: 80%;
+
+}
+.barbie2{
+  border-radius: 95px;
+  overflow: hidden;
+  height: 80%;
+
+
+}
+.btn1Player {
+  font-weight: bold;
+  margin-left: 150%;
+}
+
+.btnfos-2 {
+  background: white;
+  font-weight: 200px;
+  width: 30%;
+  height: 40%;
+  color: #EC4398;
+  font-size: 90%;
+  line-height: 200%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.btnfos-2 svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 120%;
+  border-radius: 50px;
+}
+.btnfos-2 rect {
+  fill: none;
+  stroke: white;
+  stroke-width: 1;
+  stroke-dasharray: 422, 0;
+}
+
+.btnfos-2:hover {
+  background: #EC4398;
+  letter-spacing: 1px;
+  font-weight: 100px;
+  color: white;
+}
+.btnfos-2:hover rect {
+  stroke-width: 8;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+          transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

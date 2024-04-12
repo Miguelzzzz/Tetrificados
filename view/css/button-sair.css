@@ -1,0 +1,258 @@
+
+.button-voltar {
+    background-color: #ffffff00;
+    color: #fff;
+    width: 8.5em;
+    height: 2.9em;
+    border: #ffffff 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+    margin: 20px;  
+    margin-right: 90%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    z-index: 100;
+    
+  }
+  
+  .button-voltar:hover {
+    background-color: #ffffff;
+    color: #000
+  }
+  
+  .button-voltar svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+    transform: rotate(180deg);
+
+  }
+  
+  .button-voltar:hover svg {
+    transform: translateX(5px);
+    transform: rotate(180deg);
+
+  }
+  
+  .text-voltar {
+    margin: 0 1.5em
+  }
+
+/* BOTAO BOB ESPONJA */
+
+
+.button-voltar-bob {
+    background-color: #ffffff00;
+    color: #fff;
+    width: 8.5em;
+    height: 2.9em;
+    border: #ffffff 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+    margin: 30px;  
+    margin-right: 90%;
+    margin-top: 10%;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    
+  }
+  
+  .button-voltar-bob:hover {
+    background-color: #ffffff;
+    color: #000
+  }
+  
+  .button-voltar-bob svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+    transform: rotate(180deg);
+
+  }
+  
+  .button-voltar-bob:hover svg {
+    transform: translateX(5px);
+    transform: rotate(180deg);
+
+  }
+  
+
+/* BOTAO FOOD */
+.button-voltar-food {
+  background-color: rgb(7, 7, 7);
+  color: white;
+  width: 8.5em;
+  height: 2.9em;
+  border: #ffffff00 0.2em solid;
+  border-radius: 11px;
+  text-align: right;
+  transition: all 0.6s ease;
+  margin: 50px;  
+  margin-right: 90%;
+  margin-top: 2%;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+    
+    
+  }
+  
+  .button-voltar-food:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0)
+  }
+  
+  .button-voltar-food svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+    transform: rotate(180deg);
+
+  }
+  
+  .button-voltar-food:hover svg {
+    transform: translateX(5px);
+    transform: rotate(180deg);
+
+  }
+
+  /* BUTTO MCQUEEN */
+  
+ .button-voltar-mcqueen {
+  background-color: #ffffff00;
+    color: #fff;
+    width: 8.5em;
+    height: 2.9em;
+    border: #ffffff 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+    margin: 30px;  
+    margin-right: 90%;
+    margin-top: 10%;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    
+    
+  }
+  
+  .button-voltar-mcqueen:hover {
+    background-color: #ffffff;
+    color: #000
+  }
+  
+  .button-voltar-mcqueen svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+    transform: rotate(180deg);
+
+  }
+  
+  .button-voltar-mcqueen:hover svg {
+    transform: translateX(5px);
+    transform: rotate(180deg);
+
+  }
+
+  /* BOTAO ATUALIZAR TELA INDEX */
+  #btn-atualizar {
+    background-color: #ffffff00;
+    color: #fff;
+    width: 10.5em;
+    height: 3.9em;
+    border: #ffffff 0.2em solid;
+    border-radius: 11px;
+    text-align: left;
+    transition: all 0.6s ease;
+    margin: 20px;  
+    margin-right: 90%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    z-index: 100;
+    
+  }
+  
+  #btn-atualizar:hover {
+    background-color: #ffffff;
+    color: #000
+  }
+  
+  #btn-atualizar svg {
+    width: 2.1em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+    transform: rotate(180deg);
+
+  }
+  
+  #btn-atualizar:hover svg {
+    transform: translateX(5px);
+    transform: rotate(180deg);
+
+  }
+  .text-atualizar {
+    font-size: 19px;
+    margin: 0 3.5em
+    
+  }
+
+    /* BUTTON RETRO TETRIS */
+
+    
+.button-voltar-retro {
+  background-color: #ffffff00;
+  color: #fff;
+  width: 8.5em;
+  height: 2.9em;
+  border: #ffffff 0.2em solid;
+  border-radius: 11px;
+  text-align: right;
+  transition: all 0.6s ease;
+  margin: 30px;  
+  margin-right: 90%;
+
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+  
+}
+
+.button-voltar-retro:hover {
+  background-color: #ffffff;
+  color: #000
+}
+
+.button-voltar-retro svg {
+  width: 1.6em;
+  margin: -0.2em 0.8em 1em;
+  position: absolute;
+  display: flex;
+  transition: all 0.6s ease;
+  transform: rotate(180deg);
+
+}
+
+.button-voltar-retro:hover svg {
+  transform: translateX(5px);
+  transform: rotate(180deg);
+
+}

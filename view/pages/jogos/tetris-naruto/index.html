@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tetris Naruto</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../../css/button-sair.css">
+    <!-- Estilos CSS -->
+
+  <style>
+    /* Estilo para o corpo do HTML */
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  /* Estilo para o fundo do corpo */
+
+  body {
+	background: pink;
+	background-image: url('imagem/obito.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	height: 100%;
+	margin: 0;
+	
+  }
+    /* Animação de início */
+
+  .start-animation {
+  animation: startAnimation 2s ease-out forwards;
+}
+
+    /* Keyframes para a animação de início */
+
+  @keyframes startAnimation {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+    /* Keyframes para a animação de game over */
+
+  @keyframes gameOverAnimation {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+    transform: translateY(-20px);
+	}
+	100% {
+    transform: translateY(0);
+	}
+  
+  }
+    /* Estilo para o contêiner de game over */
+
+  #gameOverContainer {
+  display: flex;
+  justify-content: center; /* Centralizar horizontalmente */
+  align-items: absolute; /* Centralizar verticalmente */
+  height: 100vh; /* Altura igual à altura da janela de visualização */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Isso controla a sobreposição - um valor maior coloca o elemento sobre o background */
+  /* Outras propriedades de estilo, como a largura, podem ser ajustadas conforme necessário */
+}
+
+  /* Estilo para a imagem de game over */
+
+  #gameOverImage {
+  display: none;
+  animation: gameOverAnimation 1s ease-in-out finite; /* Nome da animação, duração, temporização, repetição */
+}
+
+
+    /* Estilo para o canvas */
+
+
+  canvas {
+    border: 5px solid #483D8B;
+  }
+  </style>
+</head>
+<body>
+  <a href="../../../../index.html">
+    <button class="button-voltar">
+
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 rotate">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+    </svg>
+  
+    
+    <div class="text-voltar">
+      Voltar
+    </div>
+  
+  </button></a>
+<!-- Canvas para o jogo -->
+
+<canvas width="320" height="640" id="game"></canvas>
+
+<!-- Contêiner para a tela de game over -->
+
+<div id="gameOverContainer">
+<img id="gameOverImage" src="imagem\sha.gif" style="position: absolute;align-items: absolute; justify-content: center; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; opacity: 50%; width: 100%; height: 100%;"  alt="Game Over"> 
+
+<!--https://www.myinstants.com/pt/search/?name=sharingan-->
+</audio></div>
+<!-- Div para a imagem de início -->
+
+<div>
+<img id="starImage" src="imagem\obito.gif" style="position: absolute;align-items: absolute; justify-content: center; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; width: 100%; height: 100%;" alt="Start Game" class="start-animation"> 
+</div>
+<!-- Script para o jogo -->
+
+<script>
+// Lógica do jogo
+// https://tetris.fandom.com/wiki/Tetris_Guideline
+
+// get a random integer between the range of [min,max]
+// Função para gerar um número aleatório entre min e max
+// @see https://stackoverflow.com/a/1527820/2124254
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+
+
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+// generate a new tetromino sequence
+// Função para gerar uma nova sequência de tetrominos
+// @see https://tetris.fandom.com/wiki/Random_Generator
+function generateSequence() {
+  const sequence = [ 'J', 'L', 'M', 'S', 'T', 'Z' , 'I' ];
+
+  while (sequence.length) {
+    const rand = getRandomInt(0, sequence.length - 1);
+    const name = sequence.splice(rand, 1)[0];
+    tetrominoSequence.push(name);
+  }
+}
+
+// get the next tetromino in the sequence
+// Função para obter o próximo tetromino na sequência
+function getNextTetromino() {
+  if (tetrominoSequence.length === 0) {
+    generateSequence();
+  }
+
+  const name = tetrominoSequence.pop();
+  const matrix = tetrominos[name];
+
+  // I and O start centered, all others start in left-middle
+  const col = playfield[0].length / 2 - Math.ceil(matrix[0].length / 2);
+
+  // I starts on row 21 (-1), all others start on row 22 (-2)
+  const row = name === 'I' ? -1 : -2;
+
+  return {
+    name: name,      // name of the piece (L, O, etc.)
+    matrix: matrix,  // the current rotation matrix
+    row: row,        // current row (starts offscreen)
+    col: col         // current col
+  };
+}
+
+// rotate an NxN matrix 90deg
+// Função para rotacionar uma matriz NxN 90 graus
+// @see https://codereview.stackexchange.com/a/186834
+function rotate(matrix) {
+  const N = matrix.length - 1;
+  const result = matrix.map((row, i) =>
+    row.map((val, j) => matrix[N - j][i])
+  );
+
+  return result;
+}
+
+// check to see if the new matrix/row/col is valid
+// Função para verificar se a nova matriz/linha/coluna é válida
+function isValidMove(matrix, cellRow, cellCol) {
+  for (let row = 0; row < matrix.length; row++) {
+    for (let col = 0; col < matrix[row].length; col++) {
+      if (matrix[row][col] && (
+          // outside the game bounds
+		  // Fora dos limites do jogo
+          cellCol + col < 0 ||
+          cellCol + col >= playfield[0].length ||
+          cellRow + row >= playfield.length ||
+          // collides with another piece
+		  // Colide com outra peça
+          playfield[cellRow + row][cellCol + col])
+        ) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+// Inicialização de variáveis
+
+  let score = 0; // Inicialize o contador de pontos
+  let timerInterval; // Variável para controlar o temporizador
+  let timer = 0; // Inicialize o contador de tempo
+  let speed = 40; // Velocidade padrão de queda
+  const fastSpeed = 13; // Velocidade rápida após 300 segundos
+  const fastSpeed2 = 11;
+  const fastSpeed3 = 9;
+  const fastSpeed4 = 7;
+  const fastSpeed5 = 5;
+
+ 
+ 
+
+
+// Função para colocar o tetromino no campo de jogo
+// place the tetromino on the playfield
+function placeTetromino() {
+  for (let row = 0; row < tetromino.matrix.length; row++) {
+    for (let col = 0; col < tetromino.matrix[row].length; col++) {
+      if (tetromino.matrix[row][col]) {
+
+        // game over if piece has any part offscreen
+		// Fim de jogo se parte da peça estiver fora da tela
+        if (tetromino.row + row < 0) {
+          return showGameOver();
+        }
+
+        playfield[tetromino.row + row][tetromino.col + col] = tetromino.name;
+      }
+    }
+  }
+
+  // check for line clears starting from the bottom and working our way up
+    // Verifique as linhas completas começando de baixo para cima
+  for (let row = playfield.length - 1; row >= 0; ) {
+    if (playfield[row].every(cell => !!cell)) {
+
+      // drop every row above this one
+      for (let r = row; r >= 0; r--) {
+        for (let c = 0; c < playfield[r].length; c++) {
+          playfield[r][c] = playfield[r-1][c];
+        }
+      }
+      score += 75; // Você pode ajustar a quantidade de pontos ganhos aqui
+
+    }
+    else {
+      row--;
+    }
+  }
+
+  tetromino = getNextTetromino();
+}
+// Função para iniciar o temporizador
+function startTimer() {
+  timerInterval = setInterval(function() {
+    timer++;
+    // Atualize a exibição do timer na tela
+    updateTimerDisplay();
+  }, 1000); // O temporizador é atualizado a cada segundo (1000 ms)
+}
+// Função para atualizar a exibição do temporizador
+function updateTimerDisplay() {
+			context.fillStyle = 'white';
+			context.font = '24px monospace';
+			context.textAlign = 'right'; // Você pode ajustar o alinhamento como desejar
+			context.textBaseline = 'top'; // Você pode ajustar o alinhamento como desejar
+			context.fillText(`Tempo: ${timer} segundos`, canvas.width - 90, 40); // Posição do timer
+			
+	}
+
+// show the game over screen
+// Função para mostrar a tela de game over
+ 
+function showGameOver() {
+  cancelAnimationFrame(rAF);
+  gameOver = true;
+  
+  //image game over 
+    // Imagem de game over
+  const gameOverImage = document.getElementById('gameOverImage');
+
+  gameOverImage.style.display = 'block';
+
+  context.fillStyle = 'black';
+  context.globalAlpha = 0.75;
+  context.fillRect(0, canvas.height / 2 - 30, canvas.width, 60);
+
+  context.globalAlpha = 1;
+  context.fillStyle = 'white';
+  context.font = '36px monospace';
+  context.textAlign = 'center';
+  context.textBaseline = 'middle';
+  context.fillText('GAME OVER!', canvas.width / 2, canvas.height / 2);
+  
+  context.font = '24px monospace';
+  context.fillText(`Pontuação: ${score}`, canvas.width / 2, canvas.height / 2 + 40);
+  
+  stopTimer();
+  updateTimerDisplay();
+
+}
+// Função para parar o temporizador
+function stopTimer() {
+  clearInterval(timerInterval);
+}
+// Obtenha o elemento canvas e seu contexto
+const canvas = document.getElementById('game');
+const context = canvas.getContext('2d');
+const grid = 32;
+const tetrominoSequence = [];
+
+// keep track of what is in every cell of the game using a 2d array
+// tetris playfield is 10x20, with a few rows offscreen
+const playfield = [];
+
+// populate the empty state
+// Inicialize o estado vazio
+for (let row = -2; row < 20; row++) {
+  playfield[row] = [];
+
+  for (let col = 0; col < 10; col++) {
+    playfield[row][col] = 0;
+  }
+}
+
+// Definição de como desenhar cada tetromino
+// how to draw each tetromino
+// @see https://tetris.fandom.com/wiki/SRS
+const tetrominos = {
+  'I': [
+    [0,0,0,0],
+    [1,1,1,1],
+    [0,0,0,0],
+    [0,0,0,0]
+  ],
+  'J': [
+    [1,1,],
+    [1,1,0],
+    [0,0,0],
+  ],
+  'L': [
+    [1,1,0],
+    [1,0,0],
+    [1,0,0],
+  ],
+  'M': [
+
+    [1,1,1],
+    [1,1,0],
+    [0,0,0],
+
+  ],
+  'S': [
+    [0,1,1],
+    [1,1,0],
+    [0,0,0],
+  ],
+  'Z': [
+    [1,1,0],
+    [0,1,1],
+    [0,0,0],
+  ],
+  'T': [
+    [0,1,0],
+    [1,1,1],
+    [0,0,0],
+
+  ],
+  
+
+};
+// Definição das cores para cada tipo de tetromino
+// color of each tetromino
+const colors = {
+  'I': '#0000FF',
+  'O': '#0000CD',
+  'T': '#00008B',
+  'S': '#000080',
+  'Z': '#191970',
+  'J': '#483D8B',
+  'M': '#6495ED',
+  'L': '#4169E1',
+  'X': '#00BFFF'
+};
+
+
+let count = 0;
+let tetromino = getNextTetromino(); // Obtém o próximo tetromino
+let rAF = null;  // Variável para rastrear o frame de animação para que possamos cancelá-lo
+let gameOver = false; // Flag para indicar se o jogo terminou
+
+// game loop
+// Loop principal do jogo
+function loop() {
+  rAF = requestAnimationFrame(loop); // Chama a próxima iteração do loop
+  context.clearRect(0, 0, canvas.width, canvas.height);   // Limpa o canvas
+
+  
+  // Aumente a velocidade após 300 segundos
+  if ((timer >= 60) && (timer <=119))  {
+    speed = fastSpeed; // Defina uma velocidade mais rápida
+  }else if ((timer >=120)&&(timer <=179)){
+    speed = fastSpeed2;
+  }else if((timer >=180)&&(timer <=239)){
+    speed = fastSpeed3 
+    }else if((timer >=240)&&(timer <=319)){
+      speed = fastSpeed4;
+    }else if((timer >=320)&&(timer <=379)){
+      speed = fastSpeed5
+    }
+
+
+  // draw the playfield
+  // Desenha o campo de jogo
+  for (let row = 0; row < 20; row++) {
+    for (let col = 0; col < 10; col++) {
+      if (playfield[row][col]) {
+        const name = playfield[row][col];
+        context.fillStyle = colors[name];
+
+        // drawing 1 px smaller than the grid creates a grid effect
+		// Desenha 1 pixel menor que a grade para criar um efeito de grade
+        context.fillRect(col * grid, row * grid, grid - 1, grid - 1);
+      }
+    }
+  }
+
+  if (tetromino) {
+    // tetromino falls every 'speed' frames
+	// O tetromino cai a cada 'speed' frames
+    if (++count > speed) {
+      tetromino.row++;
+      count = 0;
+
+      // place piece if it runs into anything
+	  // Coloca a peça se ela encontrar algo
+      if (!isValidMove(tetromino.matrix, tetromino.row, tetromino.col)) {
+        tetromino.row--;
+        placeTetromino();
+      }
+    }
+
+    context.fillStyle = colors[tetromino.name];
+
+    for (let row = 0; row < tetromino.matrix.length; row++) {
+      for (let col = 0; col < tetromino.matrix[row].length; col++) {
+        if (tetromino.matrix[row][col]) {
+          context.fillRect((tetromino.col + col) * grid, (tetromino.row + row) * grid, grid - 1, grid - 1);
+        }
+      }
+    }
+  }
+
+  // Atualiza a exibição do contador de pontos
+  context.fillStyle = 'white';
+  context.font = '24px monospace';
+  context.textAlign = 'left';
+  context.textBaseline = 'top';
+  context.fillText(`Pontos: ${score}`, 10, 10);
+
+  // Chama a função para atualizar a exibição do temporizador
+  updateTimerDisplay();
+}
+
+
+// listen to keyboard events to move the active tetromino
+// Ouvinte para eventos do teclado para mover o tetromino ativo
+document.addEventListener('keydown', function(e) {
+  if (gameOver) return;
+
+  // left and right arrow keys (move)
+    // Teclas de seta esquerda e direita (mover)
+
+  if (e.which === 37 || e.which === 39) {
+    const col = e.which === 37
+      ? tetromino.col - 1
+      : tetromino.col + 1;
+
+    if (isValidMove(tetromino.matrix, tetromino.row, col)) {
+      tetromino.col = col;
+    }
+  }
+
+  // up arrow key (rotate)
+    // Tecla de seta para cima (rotacionar)
+
+  if (e.which === 38) {
+    const matrix = rotate(tetromino.matrix);
+    if (isValidMove(matrix, tetromino.row, tetromino.col)) {
+      tetromino.matrix = matrix;
+    }
+  }
+
+  // down arrow key (drop)
+    // Tecla de seta para baixo (cair)
+
+  if(e.which === 40) {
+    const row = tetromino.row + 1;
+
+    if (!isValidMove(tetromino.matrix, row, tetromino.col)) {
+      tetromino.row = row - 1;
+
+      placeTetromino();
+      return;
+    }
+
+    tetromino.row = row;
+  }
+});
+
+// start the game
+// Inicia o jogo
+
+startTimer(); // Inicia o temporizador
+rAF = requestAnimationFrame(loop); // Inicia o loop principal do jogo
+</script>
+</body>
+</html>

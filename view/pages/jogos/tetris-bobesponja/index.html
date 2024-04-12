@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PAGINA INICIAL</title>
+    <link rel="stylesheet" href="../../../css/button-sair.css">
+
+</head>
+<style type="text/css">
+
+    body {
+        background-image: url(img/fundoIndex.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        font-family: 'Bob esponja', Verdana, sans-serif;
+
+    }
+
+    font {
+        color: white;
+        font-size: 50px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @font-face {
+        font-family: 'Bob esponja'; /* Nome que você deseja dar à sua fonte */
+        src: url('Spongeboy Me Bob.ttf') format('truetype'); /* Caminho para o arquivo da fonte */
+        /* Adicione outros formatos de fonte (eot, woff, woff2, etc.) para garantir suporte em diferentes navegadores */
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Permite que as imagens vão para a linha seguinte se não houver espaço suficiente */
+        gap: 20px; /* Espaçamento entre as imagens */
+    }
+
+    .image {
+        opacity: 1;
+        display: block;
+        width: 250px;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        cursor: pointer;
+
+    }
+
+    .image:hover {
+        opacity: 0.8;
+    }
+
+    .text {
+        background-color: black;
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+    }
+
+    .logo {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+    }
+    .tudo {
+     width: 100%;
+     color: white;
+    }
+</style>
+
+<body>
+    <a href="../../../../index.html"><button class="button-voltar-bob">
+
+  
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 rotate">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+        </svg>
+      
+        
+        <div class="text-voltar">
+          Voltar
+        </div>
+      
+      </button></a>
+
+	<div class="tudo">
+    <img src="img/logoBob.png" width="230px" class="logo"><br>
+    <center>
+        <br><br><br><br><br><br>
+        <font><b>ESCOLHA UM TEMA:</b></font>
+         <div class="explicacao">
+            <img src="img/explicacaoIndex.png" width="520px">
+        </div><br>
+        <div class="container">
+            <a href="TetrisBob.html">
+                <img src="img/bob.png" alt="Bob esponja" class="image">
+            </a>
+            <a href="TetrisPatrick.html">
+                <img src="img/patrick.png" alt="Patrick" class="image">
+            </a>
+            <a href="Tetris.html">
+                <img src="img/turmaToda.png" alt="turmaToda" class="image">
+            </a>
+        </div>
+        <div class="comandos">
+          <img src="img/comandosIndex.png" width="760px">
+        </div>
+    </center>
+</div>
+
+</html>

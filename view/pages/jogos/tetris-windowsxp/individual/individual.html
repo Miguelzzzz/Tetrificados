@@ -1,0 +1,368 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tetris Windows XP!</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="shortcut icon" href="../img/logotitle.png" type="image/x-icon">
+
+</head>
+<body class="fundo">
+  <a href="../index.html" id="backButton" class="btn voltarBtn"><i class="fas fa-arrow-left"></i> Voltar</a>
+  <style type="text/css">
+  body, html {
+      color:rgb(0, 0, 0);
+      font-family: 'Lucida Console';
+      height: 100%;
+      overflow: hidden;
+      text-align: center;
+      min-width: 700px;
+  }
+
+  .fundo {
+        background-image: url(../img/fundoxp.png);
+        background-size: center/cover;
+        background-repeat: no-repeat;
+        
+      }
+
+  .wrapper {
+      display: inline-flex;
+      justify-content: center;
+      margin: 1vh 0;
+      padding: 1% 1% .5% 1%;
+      box-shadow: -1px 5px 5px rgba(0, 0, 0, .75);;
+  }
+
+  .modal {
+    background-image: url(../img/telaAzul.png);
+    background-repeat: no-repeat;
+    background-position: center top; /* Ajuste aqui para cortar a parte superior */
+    background-size: cover;
+}
+
+
+#backButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #2f9600b6;
+  color: white;
+  border-radius: 5px;
+  font-weight: 800;
+  border: none;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.5s;
+  line-height: 15px; /* Ajuste conforme necessário para centralizar verticalmente */
+}
+
+#backButton:hover {
+  background-color: #2f9600;
+  transform: scale(1.1);
+}
+
+
+
+
+.tetris {
+  height: 90vh;
+  border: solid 2px #fff; /* Adiciona uma borda branca */
+  box-sizing: border-box; /* Garante que a borda não aumente as dimensões reais da tela */
+  }
+  
+  .tetris div {
+    width: calc(100% / 10); /* Divide a largura do contêiner em 10 colunas */
+    height: calc(100% / 20); /* Divide a altura do contêiner em 20 linhas */
+    box-sizing: border-box;
+    float: left; /* Permite que as células fiquem ao lado umas das outras */
+    border: solid 1px #fff; /* Adiciona uma borda branca entre as células */
+  }
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color:rgb(255, 255, 255);
+}
+
+  .modal-content .btn {
+      font-size: 20px !important;
+      font-weight: 700;
+  }
+
+  .btn:hover {
+    position:relative;
+    top:-2px;box-shadow: 3px 5px 6px rgba(0, 0, 0, .75);
+  }
+
+  .voltarBtn {
+
+    margin-bottom: 20px;
+  }
+
+  .modal-content input {
+      color: white;
+      font-size: 24px !important;
+      width: 50% !important;
+      text-align: center;
+  }
+
+  .modal-content label {
+      font-size: 16px !important;
+  }
+
+  .btn:focus {
+      background-color: #2f9600b6 !important;
+  }
+
+  .btn {
+      background-color: #2f9600b6 !important;
+  }
+
+<<<<<<< HEAD
+  
+=======
+  .score {
+    margin-right: 30px;
+  }
+>>>>>>> f273375a4c5430f6e84b7d454e0bb35879ac641f
+
+  .yourScore {
+    padding-bottom: 0px; 
+  }
+
+  .detailsLeft {
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    position: relative;
+    font-size: 16px;
+   
+   }
+
+  .highScores {
+    position: absolute;
+    bottom: 35px;
+    right: 0px;
+    line-height: 10px;
+    font-size: 14px;
+   }
+
+   .menuzinho{
+    margin-bottom: 15px;
+    text-decoration: underline;
+    font-size: 19px;
+    font-weight: 900;
+   }
+
+  .detailsRight {
+    position: relative;
+    height: 90vh;
+    margin: 2% 2% 0% 2%;
+    text-align: left;
+  }
+
+  .next {
+    height: 15vh;
+    border: solid .1em $white;
+  }
+
+  .controls {
+    position: absolute;
+    bottom: 50px;
+    left: 0px;
+    font-size: 12px;
+    line-height: 8px;
+  }
+
+  .tetris {
+    height: 90vh;
+    border: solid .25em $white;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+      color: rgba(255, 255, 255, .85);
+    line-height: 0px;
+  }
+
+  .footer a:link, a:visited, a:active {
+    color: rgba(255, 255, 255, .85);
+    text-decoration: none;
+  }
+
+  .footer a:link:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  #erro-sound{
+    visibility: hidden;
+    position: absolute;
+  }
+
+  @media (max-width: 1920px), (max-height: 920px){
+      body, html {
+      font-size: 16px;
+      margin: 0px !important;
+      }
+      
+      .modal {
+          margin-top: -75px;
+          min-height: 110vh;
+          min-width: 100vw;
+      }
+
+      /* mudar para 30% se nao for usar tela cheia */
+      .modal-content{
+        margin-top: 33%
+      }
+      
+      .modal-content .btn {
+          font-size: 14px !important;
+      }
+      
+      .modal-content input {
+          color: white;
+          font-size: 12px !important;
+          width: 50% !important;
+          text-align: center;
+      }
+      
+      .modal-content label {
+          font-size: 14px !important;
+      }
+
+      .wrapper {
+          display: inline-flex;
+          justify-content: center;
+          padding: 0% 0%;
+          margin: 0px !important;
+          height: 100%;
+          width: 100%;
+        }
+      
+      .detailsLeft {
+        height: 80vh;
+        width: 110px;
+        margin: 5% 1% 0% 0%;
+        margin-right: 30px;
+        font-size: 18px;
+        }
+    
+    .score-title {
+      font-size: 14px;
+      font-weight: 800;
+
+    }
+    
+      .highScores {
+      
+        line-height: 8px;
+        font-size: 12px;
+        font-weight: 800;
+
+    }
+
+      .detailsRight {
+        height: 80vh;
+        width: 120px;
+        margin: 5% 0% 0% 1%;
+        text-align: left;
+      }
+    
+      .next {
+        border: solid .1em $white;
+        height: 12vh;
+      }
+
+      .controls {
+        line-height: 8px;
+        font-size: 12px;
+      }
+      
+      .tetris {
+        height: 92vh;
+        border: solid .25em $white;
+        margin-bottom: 2%;
+        margin-top: 2%;
+      }
+      .footer {
+        font-size: 12px;
+      }
+  } 
+  </style>
+
+  <div class="wrapper">
+
+    <div id="newGame" class="modal">
+        <div class="modal-content">
+          <h4>Tetris</h4>
+          <div class="voltarBtn btn"><a href="../index.html">Voltar</a></div>
+          <button onclick="newGame()" id="newGameBtn" class="modal-close waves-effect waves-light btn" style="width:250px">Novo jogo</button>
+          </div>
+        </div>
+
+    <div id="pause" class="modal">
+        <div class="modal-content">
+          <h4>Jogo Pausado!</h4>
+          <div class="voltarBtn btn"><a href="../index.html">Voltar</a></div>
+          <button onclick="pauseGame()" id="pauseBtn" class="modal-close waves-effect waves-light btn">Continuar!</button><br>
+          <button onclick="newGame()" id="StartNewBtn" class="modal-close waves-effect waves-light btn">Começar um novo jogo!</button>
+          </div>
+        </div>
+
+    <div id="gameOver" class="modal">
+        <div class="modal-content">
+          <h4>Jogo Terminado!</h4>
+              <div class="yourScore"></div>
+              <form id="highScore">
+              </form>
+              <div class="voltarBtn btn"><a href="../index.html">Voltar</a></div>
+              <a onclick="newGame()" class="modal-close waves-effect waves-light btn">Comece um novo jogo!</a>
+          </div>
+        </div>
+        
+    <div class="detailsLeft">
+      <div class="menuzinho"> Menu: ESC </div>
+      <div class="score"> </div>
+      <div class="level"> </div>
+      <div class="highScores"> </div>
+    </div>
+   
+    <canvas class="tetris" width="240" height="400"></canvas>
+
+    <div class="detailsRight">
+        <canvas class="next" width="160" height="160"></canvas>
+        <br>
+        
+      </div>  
+  </div> 
+
+  <audio src="../individual/audios/erro.mp3" controls id="erro-sound"></audio>
+  <audio src="../individual/audios/music.mp3" controls id="music-sound" autoplay></audio>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var music = document.getElementById('music-sound');
+      music.volume = 0.2; // Ajuste o valor conforme desejado (entre 0 e 1)
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script src="individual.js"></script>
+
+</body>
+</html>

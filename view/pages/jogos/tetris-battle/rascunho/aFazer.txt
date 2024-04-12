@@ -1,0 +1,5 @@
+- criar um slide bar pro volume 
+- muda a font dos pontos e deixar mais bonitos
+- criar a imagem dos controles
+- criar a seleção de fundos 
+- criar a prévia do proximo bloco

@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'Dekris';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Deckris'), url('./ConnectionBold-ER1g.otf') format('truetype');
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background: darkred;
+    margin: 0;
+}
+
+#score #speed {
+    display: inline-block;
+}
+
+.logo{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    text-decoration-color: #FFF;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+#game {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.with-bg {
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.side {
+    width: 400px;
+}
+
+#tetris {
+    border: 4px outset #919191;
+    max-width: 400px !important;
+    max-height: 760px !important;
+}
+
+.float {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-screen {
+    width: 1280px;
+    height: 800px;
+    max-width: 1280px;
+    max-height: 800px;
+}
+
+#game-over {
+    background-color: rgb(0 0 0 / 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home {
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.logo {
+    font-family: 'Dekris', serif;
+    font-size: 160px;
+    text-shadow: 3px 4px 4px #a3a3a3;
+}
+
+#quitBtn {
+    margin-top: 10px;
+}
+
+button:not(.button-voltar){
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 15px;
+    background: #fff;
+    /* fallback color for old browsers */
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-out;
+    font-size: 50px;
+    padding: 10px 0px;
+    width: 400px;
+    font-family: monospace;
+    color: darkred;
+
+}
+
+button.active {
+    background: #FFF !important;
+}
+
+button:hover {
+    background: #FFF;
+    cursor: pointer;
+}
+
+#startBtn {
+    color: darkred;
+      background: #FFF;
+}
+
+.red {
+    color: #C20000;
+}
+
+.pink {
+    color: #091842;
+}
+
+.blue {
+    color: #486FBC;
+}
+
+.yellow {
+    color: #49C62D;
+}
+
+.purple {
+    color: #3F1667;
+}
+
+.cyan {
+    color: cyan;
+}
+
+.orange {
+    color: #643413;
+}
